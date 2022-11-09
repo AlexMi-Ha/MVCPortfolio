@@ -1,0 +1,50 @@
+html {
+  font-size: 14px;
+}
+
+root {
+    --background: #282c34;
+    --white: #abb2bf;
+    --gold: #e5c07b;
+    --blue: #61afef;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+}
+
+#main-content {
+    display:flex;
+    justify-content: center;
+}
+
+#weather-container {
+
+}
+
+.weather-icon {
+
+}
+
+.weather-degree {
+
+}
+
+.weather-text {
+
+}
+
+.weather-rain-perc {
+
+}

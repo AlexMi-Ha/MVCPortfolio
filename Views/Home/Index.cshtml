@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Weather";
+}
+
+<div id="weather-container">
+    
+    <img class="weather-icon" src="@Model.ImgSrc" alt="weathericon"/>
+    <p class="weather-degree">@Model.Degree</p>
+    <p class="weather-text">@Model.WeatherDescription</p>
+    <p class="weather-rain-perc">@(Model.RainPerc)% Rain</p>
+    
+</div>

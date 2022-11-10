@@ -1,6 +1,14 @@
+using MVCPortfolio.Models.Interfaces;
+using MVCPortfolio.Models.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+#region Services (not needed for minimal initialization
+// Add Weather Service
+builder.Services.AddTransient<IWeatherService,WeatherService>();
+#endregion
 
 var app = builder.Build();
 

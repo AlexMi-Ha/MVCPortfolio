@@ -1,12 +1,19 @@
-﻿@{
+﻿@using MVCPortfolio.Models.ValueObjects
+@model WeatherModel
+@{
     ViewData["Title"] = "Weather";
 }
 
+<form asp-action>
+
+</form>
+
+@if (Model.Location != null) {
+    <h2>Weather for @Model.Location</h2>
+}
 <div id="weather-container">
-    
     <img class="weather-icon" src="@Model.ImgSrc" alt="weathericon"/>
-    <p class="weather-degree">@Model.Degree</p>
     <p class="weather-text">@Model.WeatherDescription</p>
-    <p class="weather-rain-perc">@(Model.RainPerc)% Rain</p>
-    
+    <p class="weather-degree">@(Model.Degree)°C</p>
+    <p><span class="weather-humid">@(Model.Humidity)%</span> Humidity</p>    
 </div>

@@ -2,7 +2,23 @@ html {
   font-size: 14px;
 }
 
-root {
+@font-face {
+    font-family: "JetBrainsMono Nerd Font";
+    src: local(JetBrains Mono Bold Nerd Font Complete), url("fonts/SUYkVPQNzqpyuvGu.woff2") format("woff2"), url("fonts/Q1FiBQcBNoPgmqCz.ttf") format("truetype");
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "JetBrainsMono Nerd Font";
+    src: local(JetBrains Mono Regular Nerd Font Complete), url("fonts/vpi7wY9hI3YBaZK1.woff2") format("woff2"), url("fonts/8GC6i3O-8O4u_YJ0.ttf") format("truetype");
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+}
+
+:root {
     --background: #282c34;
     --white: #abb2bf;
     --gold: #e5c07b;
@@ -27,24 +43,45 @@ body {
 #main-content {
     display:flex;
     justify-content: center;
+    color: var(--white);
 }
 
 #weather-container {
+    border: 4px var(--white) solid;
+    border-radius: 5px;
+    width:400px;
+    margin: 10em auto;
+    text-align: center;
+    padding-bottom: 1em;
+}
 
+p {
+    color: var(--white);
 }
 
 .weather-icon {
+    width: 10em;
+    height: auto;
+    margin: -5em auto -1em auto;
+    fill: var(--white);
+    background: var(--background);
+}
 
+#weather-container > p {
+    font-size: larger;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-weight: bolder;
+    margin-top: .5em;
+    margin-bottom: .5em;
 }
 
 .weather-degree {
-
+    color: var(--gold);
 }
 
 .weather-text {
-
 }
 
-.weather-rain-perc {
-
+.weather-humid {
+    color: var(--blue);
 }

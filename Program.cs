@@ -61,7 +61,7 @@ app.MapGet("/logout", async (HttpContext context) => {
 });
 #endregion
 
-// include static files -> images, css,...
+// include static files -> images, css,...  (default /wwwroot/ folder)
 app.UseStaticFiles();
 
 // Set default controller route

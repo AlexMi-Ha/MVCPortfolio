@@ -2,7 +2,7 @@
     public enum WeatherType {
         SUNNY,
         CLOUDY,
-        RAIN,
+        RAINY,
         THUNDER,
         SNOWY
     }

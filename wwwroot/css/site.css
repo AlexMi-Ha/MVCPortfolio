@@ -23,6 +23,7 @@ html {
     --white: #abb2bf;
     --gold: #e5c07b;
     --blue: #61afef;
+    --green: #98c379;
 }
 
 @media (min-width: 768px) {
@@ -40,17 +41,25 @@ body {
   background: var(--background);
 }
 
-#main-content {
-    display:flex;
-    justify-content: center;
+h2 {
+    font-family: 'JetBrainsMono Nerd Font';
+    text-align: center;
+}
+
+.green-highlight {
+    color: var(--green);
+}
+
+#main-container {
     color: var(--white);
+    padding-top: 5em;
 }
 
 #weather-container {
     border: 4px var(--white) solid;
     border-radius: 5px;
     width:400px;
-    margin: 10em auto;
+    margin: 7em auto;
     text-align: center;
     padding-bottom: 1em;
 }
@@ -84,4 +93,57 @@ p {
 
 .weather-humid {
     color: var(--blue);
+}
+
+/*---------------------*/
+
+
+.did-floating-label-content {
+    position: relative;
+    margin-bottom: 20px;
+    width: 400px;
+    margin: 1em auto;
+}
+
+.did-floating-label {
+    color: var(--green);
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'JetBrainsMono Nerd Font';
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 12px;
+    padding: 0 5px;
+    background: var(--background);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.did-floating-input, .did-floating-select {
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding: 18px 20px;
+    background: var(--background);
+    color: var(--white);
+    font-weight:bold;
+    font-size:large;
+    border: 3px solid var(--white);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.did-floating-input:focus {
+    outline: none;
+}
+.did-floating-input:focus ~ .did-floating-label {
+    top: -8px;
+    font-size: 13px;
+}
+
+.did-floating-input:not(:placeholder-shown) ~ .did-floating-label {
+    top: -8px;
+    font-size: 13px;
 }

@@ -8,15 +8,12 @@ namespace MVCPortfolio.Models.ValueObjects {
         public double Degree { get; init; }
         public WeatherType WeatherType { get; init; }
 
-        public string WeatherDescription { 
-            get => WeatherType switch {
-                    WeatherType.CLOUDY => "Bewölkt",
-                    WeatherType.RAIN => "Regen",
-                    WeatherType.SNOWY => "Schnee",
-                    WeatherType.THUNDER => "Gewitter",
-                    WeatherType.SUNNY => "Sonnig",
-                    _ => throw new ArgumentException("Unknown Weather Type")
-            };
+        public string WeatherDescription {
+            get {
+                var weatherString = WeatherType.ToString().ToLower();
+                return string.Concat(weatherString[0].ToString().ToUpper(), weatherString.AsSpan(1));
+            }
+            
         }
 
         public string ImgSrc {

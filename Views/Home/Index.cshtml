@@ -3,13 +3,15 @@
 @{
     ViewData["Title"] = "Weather";
 }
-
-<form asp-action>
-
+<form asp-action="SearchView" asp-controller="Home" method="get">
+    <div class="did-floating-label-content">
+        <input class="did-floating-input" type="text" placeholder=" " autocomplete="off" name="location" />
+        <label class="did-floating-label">Search City...</label>
+    </div>
 </form>
 
 @if (Model.Location != null) {
-    <h2>Weather for @Model.Location</h2>
+        <h2>Weather for <span class="green-highlight">@Model.Location</span></h2>
 }
 <div id="weather-container">
     <img class="weather-icon" src="@Model.ImgSrc" alt="weathericon"/>

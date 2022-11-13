@@ -6,11 +6,12 @@ namespace MVCPortfolio.Models.Services {
     public class WeatherService : IWeatherService{
 
         public Task<WeatherModel> GetWeatherAsync() {
+            Random rand = new();
+
             var wType = Enum.GetValues(typeof(WeatherType))
                             .OfType<WeatherType>()
-                            .OrderBy(e => Guid.NewGuid())
+                            .OrderBy(e => rand.Next())
                             .FirstOrDefault();
-            Random rand = new();
 
             var deg = wType == WeatherType.SNOWY ? rand.Next(15) - 10 : rand.Next(20) + 10;
             var humidity = rand.Next(60) + 40;

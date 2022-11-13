@@ -51,12 +51,13 @@ a,details {
     text-decoration: underline;
     font-weight: bold;
     font-family: 'JetBrainsMono Nerd Font';
-    font-size: larger;
+    font-size: large;
     margin: 0 20px;
 }
 
 details {
     text-decoration: none;
+    user-select: none;
 }
 
 .green-highlight {

@@ -20,11 +20,11 @@ namespace MVCPortfolio.Models.ValueObjects {
             get => "/svgs/" + WeatherType.ToString() + ".svg";
         }
 
-        public WeatherModel(double degree, WeatherType weatherType, int humidity) {
+        public WeatherModel(double degree, WeatherType weatherType, int humidity, string? location = null) {
             this.Degree = degree;
             this.WeatherType = weatherType;
             this.Humidity = humidity;
-            Location = null;
+            this.Location = location;
         }
 
     }

@@ -11,11 +11,21 @@
 </form>
 
 @if (Model.Location != null) {
-        <h2>Weather for <span class="green-highlight">@Model.Location</span></h2>
+    <h2>Weather for <span class="green-highlight">@Model.Location</span></h2>
 }
 <div id="weather-container">
     <img class="weather-icon" src="@Model.ImgSrc" alt="weathericon"/>
-    <p class="weather-text">@Model.WeatherDescription</p>
-    <p class="weather-degree">@(Model.Degree)°C</p>
-    <p><span class="weather-humid">@(Model.Humidity)%</span> Humidity</p>    
+    <p>@Model.WeatherDescription</p>
+    <p class="gold-highlight">@(Model.Degree)°C</p>
+    <p><span class="blue-highlight">@(Model.Humidity)%</span> Humidity</p>    
 </div>
+
+<details>
+    <summary>More...</summary>
+    <a asp-action="SuperSecret" asp-controller="Home" asp-route-id="5">Super Secret Page 5 - KEEP OUT</a><br />
+    @if (User?.Identity?.IsAuthenticated ?? false) {
+        <a asp-action="Logout" asp-controller="Auth">Logout</a>
+    }else {
+        <a asp-action="Login" asp-controller="Auth">Login</a>
+    }
+</details>

@@ -1,10 +1,7 @@
 #region Not needed for minimal initialization
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication;
 using MVCPortfolio.Models.Interfaces;
 using MVCPortfolio.Models.Services;
-using System.Security.Claims;
-using System.Net;
 #endregion
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,10 +15,7 @@ builder.Services.AddTransient<IWeatherService,WeatherService>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options => {
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
-        options.Events.OnRedirectToLogin = (context) => {
-            context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-            return Task.CompletedTask;
-        };
+        options.LoginPath = "/Auth/Unauthorized";
     });
 #endregion
 
@@ -42,23 +36,6 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapGet("/auth", async (HttpContext context) => {
-    var claims = new List<Claim> {
-        new Claim(ClaimTypes.Name, "Test"),
-        new Claim(ClaimTypes.Role, "Administrator"),
-    };
-
-    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-    await context.SignInAsync(
-            CookieAuthenticationDefaults.AuthenticationScheme,
-            new ClaimsPrincipal(claimsIdentity));
-
-    return "Authorized";
-});
-app.MapGet("/logout", async (HttpContext context) => {
-    await context.SignOutAsync();
-    return "Logged out!";
-});
 #endregion
 
 // include static files -> images, css,...  (default /wwwroot/ folder)

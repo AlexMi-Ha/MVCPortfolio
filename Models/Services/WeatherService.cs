@@ -5,17 +5,17 @@ using MVCPortfolio.Models.ValueObjects;
 namespace MVCPortfolio.Models.Services {
     public class WeatherService : IWeatherService{
 
-        public async Task<WeatherModel> GetWeatherAsync() {
+        public Task<WeatherModel> GetWeatherAsync() {
             var wType = Enum.GetValues(typeof(WeatherType))
                             .OfType<WeatherType>()
                             .OrderBy(e => Guid.NewGuid())
                             .FirstOrDefault();
-            Random rand = new Random();
+            Random rand = new();
 
             var deg = wType == WeatherType.SNOWY ? rand.Next(15) - 10 : rand.Next(20) + 10;
             var humidity = rand.Next(60) + 40;
 
-            return new WeatherModel(deg, wType, humidity);
+            return Task.FromResult(new WeatherModel(deg, wType, humidity));
         }
 
         public async Task<WeatherModel> GetWeatherForLocationAsync(string location) {

@@ -41,13 +41,34 @@ body {
   background: var(--background);
 }
 
-h2 {
+h2, h1 {
     font-family: 'JetBrainsMono Nerd Font';
     text-align: center;
 }
 
+a,details {
+    color: var(--white);
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: larger;
+    margin: 0 20px;
+}
+
+details {
+    text-decoration: none;
+}
+
 .green-highlight {
     color: var(--green);
+}
+
+.blue-highlight {
+    color: var(--blue);
+}
+
+.gold-highlight {
+    color: var(--gold);
 }
 
 #main-container {
@@ -82,17 +103,6 @@ p {
     font-weight: bolder;
     margin-top: .5em;
     margin-bottom: .5em;
-}
-
-.weather-degree {
-    color: var(--gold);
-}
-
-.weather-text {
-}
-
-.weather-humid {
-    color: var(--blue);
 }
 
 /*---------------------*/

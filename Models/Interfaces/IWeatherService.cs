@@ -3,7 +3,6 @@
 namespace MVCPortfolio.Models.Interfaces {
     public interface IWeatherService {
 
-        Task<WeatherModel> GetWeatherAsync();
-        Task<WeatherModel> GetWeatherForLocationAsync(string location);
+        Task<WeatherModel> GetWeatherAsync(string location);
     }
 }

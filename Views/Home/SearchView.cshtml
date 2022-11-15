@@ -1,0 +1,23 @@
+﻿@using MVCPortfolio.Models.ValueObjects
+@model WeatherModel
+@{
+    ViewData["Title"] = "Weather";
+}
+
+<form asp-action="SearchView" asp-controller="Home" method="get">
+    <div class="did-floating-label-content">
+        <input class="did-floating-input" type="text" placeholder=" " autocomplete="off" name="location" />
+        <label class="did-floating-label">Search City...</label>
+    </div>
+</form>
+
+<h2>Weather for <span class="green-highlight">@Model.Location</span></h2>
+
+<div id="weather-container">
+    <img class="weather-icon" src="@Model.ImgSrc" alt="weathericon"/>
+    <p>@Model.WeatherDescription</p>
+    <p class="gold-highlight">@(Model.Degree)°C</p>
+    <p><span class="blue-highlight">@(Model.Humidity)%</span> Humidity</p>    
+</div>
+
+<a asp-action="Index" asp-controller="Home">Go Back</a>

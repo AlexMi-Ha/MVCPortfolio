@@ -13,14 +13,14 @@ public class HomeController : Controller {
     }
 
     [HttpGet]
-    public async Task<IActionResult> Index() {
-        return View(await _weatherService.GetWeatherAsync());
+    public IActionResult Index() {
+        return View();
     }
     
     [HttpGet]
     [Route("search")]
     public async Task<IActionResult> SearchView(string location) {
-        return View("Index", await _weatherService.GetWeatherForLocationAsync(location));
+        return View(await _weatherService.GetWeatherAsync(location));
     }
 
     [Authorize]

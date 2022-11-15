@@ -3,7 +3,7 @@
 namespace MVCPortfolio.Models.ValueObjects {
     public struct WeatherModel {
 
-        public string? Location { get; set; }
+        public string Location { get; set; }
 
         public double Degree { get; init; }
         public WeatherType WeatherType { get; init; }
@@ -20,7 +20,7 @@ namespace MVCPortfolio.Models.ValueObjects {
             get => "/svgs/" + WeatherType.ToString() + ".svg";
         }
 
-        public WeatherModel(double degree, WeatherType weatherType, int humidity, string? location = null) {
+        public WeatherModel(double degree, WeatherType weatherType, int humidity, string location) {
             this.Degree = degree;
             this.WeatherType = weatherType;
             this.Humidity = humidity;

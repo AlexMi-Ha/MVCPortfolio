@@ -12,6 +12,7 @@ builder.Services.AddControllersWithViews();
 // Add Weather Service
 builder.Services.AddTransient<IWeatherService,WeatherService>();
 
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options => {
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);

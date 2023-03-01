@@ -4,7 +4,7 @@ html {
 
 @font-face {
     font-family: "JetBrainsMono Nerd Font";
-    src: local(JetBrains Mono Bold Nerd Font Complete), url("/fonts/SUYkVPQNzqpyuvGu.woff2") format("woff2"), url("fonts/Q1FiBQcBNoPgmqCz.ttf") format("truetype");
+    src: local(JetBrains Mono Bold Nerd Font Complete), url("/fonts/SUYkVPQNzqpyuvGu.woff2") format("woff2"), url("/fonts/Q1FiBQcBNoPgmqCz.ttf") format("truetype");
     font-stretch: normal;
     font-style: normal;
     font-weight: 700;
@@ -12,7 +12,7 @@ html {
 
 @font-face {
     font-family: "JetBrainsMono Nerd Font";
-    src: local(JetBrains Mono Regular Nerd Font Complete), url("/fonts/vpi7wY9hI3YBaZK1.woff2") format("woff2"), url("fonts/8GC6i3O-8O4u_YJ0.ttf") format("truetype");
+    src: local(JetBrains Mono Regular Nerd Font Complete), url("/fonts/vpi7wY9hI3YBaZK1.woff2") format("woff2"), url("/fonts/8GC6i3O-8O4u_YJ0.ttf") format("truetype");
     font-stretch: normal;
     font-style: normal;
     font-weight: 400;
